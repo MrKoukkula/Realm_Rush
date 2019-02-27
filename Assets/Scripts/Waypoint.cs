@@ -12,7 +12,7 @@ public class Waypoint : MonoBehaviour
         get { return gridSize; }
     }
 
-    public Vector2 GetGridPos
+    public Vector2Int GetGridPos
     {
         get
         {
