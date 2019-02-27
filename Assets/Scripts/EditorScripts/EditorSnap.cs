@@ -1,10 +1,18 @@
 ﻿using UnityEngine;
 
-[ExecuteInEditMode] [SelectionBase]
+[ExecuteInEditMode]
+[SelectionBase]
+[RequireComponent(typeof(Waypoint))]
 public class EditorSnap : MonoBehaviour
 {
-    [Range(1f, 20f)] [SerializeField] float gridSize = 10f;
+    
     TextMesh numberLocation;
+    Waypoint waypoint;
+
+    private void Awake()
+    {
+        waypoint = GetComponent<Waypoint>();
+    }
 
     private void Start()
     {
@@ -13,14 +21,22 @@ public class EditorSnap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 snapPos;
-        snapPos.x = Mathf.RoundToInt(transform.position.x / 10f) * gridSize;
-        snapPos.y = Mathf.RoundToInt(transform.position.y / 10f) * gridSize;
-        snapPos.z = Mathf.RoundToInt(transform.position.z / 10f) * gridSize;
+        SnapToGrid();
+        UpdateLabel();
+    }
 
-        transform.position = new Vector3(snapPos.x, snapPos.y, snapPos.z);
+    private void SnapToGrid()
+    {
+        float gridSize = waypoint.GetGridSize;
+        //print(waypoint.GetGridPos);
 
-        string labelText = snapPos.x / gridSize + "," + snapPos.z / gridSize;
+        transform.position = new Vector3(waypoint.GetGridPos.x, 0f, waypoint.GetGridPos.y);
+    }
+
+    private void UpdateLabel()
+    {
+        float gridSize = waypoint.GetGridSize;
+        string labelText = waypoint.GetGridPos.x / gridSize + "," + waypoint.GetGridPos.y / gridSize;
         numberLocation.text = labelText;
         gameObject.name = "Waypoint " + labelText;
     }
