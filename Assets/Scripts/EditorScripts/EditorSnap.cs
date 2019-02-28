@@ -28,7 +28,6 @@ public class EditorSnap : MonoBehaviour
     private void SnapToGrid()
     {
         float gridSize = waypoint.GetGridSize;
-        print(waypoint.GetGridPos);
 
         transform.position = new Vector3(waypoint.GetGridPos.x * gridSize, 0f, waypoint.GetGridPos.y * gridSize);
     }
