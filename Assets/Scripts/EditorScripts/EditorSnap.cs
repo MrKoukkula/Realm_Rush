@@ -28,15 +28,15 @@ public class EditorSnap : MonoBehaviour
     private void SnapToGrid()
     {
         float gridSize = waypoint.GetGridSize;
-        //print(waypoint.GetGridPos);
+        print(waypoint.GetGridPos);
 
-        transform.position = new Vector3(waypoint.GetGridPos.x, 0f, waypoint.GetGridPos.y);
+        transform.position = new Vector3(waypoint.GetGridPos.x * gridSize, 0f, waypoint.GetGridPos.y * gridSize);
     }
 
     private void UpdateLabel()
     {
         float gridSize = waypoint.GetGridSize;
-        string labelText = waypoint.GetGridPos.x / gridSize + "," + waypoint.GetGridPos.y / gridSize;
+        string labelText = waypoint.GetGridPos.x + "," + waypoint.GetGridPos.y;
         numberLocation.text = labelText;
         gameObject.name = "Waypoint " + labelText;
     }
