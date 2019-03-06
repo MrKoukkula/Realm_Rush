@@ -9,6 +9,7 @@ public class PathFinder : MonoBehaviour
     Queue<Waypoint> queue = new Queue<Waypoint>();
     bool isRunning = true;
     Waypoint searchCenter;
+    List<Waypoint> path = new List<Waypoint>();
 
     [SerializeField] Waypoint startWaypoint, endWaypoint;
     Vector2Int[] directions =
@@ -22,16 +23,38 @@ public class PathFinder : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LoadBlocks(); //Load the world
-        addStartAndEnd(); //Mark the start and end points
-        PathFind(); //Start searching
+        
     }
 
-    private void PathFind()
-    {
-        queue.Enqueue(startWaypoint); //Because the queue is empty, addthe start point
+    public List<Waypoint> getPath {
 
-        while (queue.Count > 0 && isRunning) // As long as the queue is not empty, this loop will run.
+        get {
+            LoadBlocks(); //Load the world
+            addStartAndEnd(); //Mark the start and end points
+            BreadthFirstSearch(); //Start searching
+            CreatePath();
+            return path;
+        }
+    }
+
+    private void CreatePath()
+    {
+        path.Add(endWaypoint);
+        Waypoint previousWaypoint = endWaypoint.exploredFrom;
+        while (previousWaypoint != startWaypoint)
+        {
+            path.Add(previousWaypoint);
+            previousWaypoint = previousWaypoint.exploredFrom;
+        }
+        path.Add(startWaypoint);
+        path.Reverse();
+    }
+
+    private void BreadthFirstSearch()
+    {
+        queue.Enqueue(startWaypoint); //Because the queue is empty, add the start point
+
+        while (queue.Count > 0 && isRunning) // As long as the queue is not empty and the searchpoint has not been found, this loop will run.
         {
             searchCenter = queue.Dequeue(); // pop the first item from the queue
             print("Searching from " + searchCenter);
@@ -51,13 +74,9 @@ public class PathFinder : MonoBehaviour
         {
             Vector2Int explorationPos = searchCenter.GetGridPos + direction; //Search direction is up, right, down, left
             //print("Exploring " + explorationPos);
-            try
+            if (grid.ContainsKey(explorationPos))
             {
                 queueNewNeighbour(explorationPos);
-            }
-            catch
-            {
-                // Do nothing
             }
         }
     }
@@ -73,7 +92,7 @@ public class PathFinder : MonoBehaviour
             //neighbour.SetTopColor(Color.blue);
             neighbour.exploredFrom = searchCenter;
             queue.Enqueue(neighbour);
-            print("queuing from " + neighbour);
+            print("queuing " + neighbour);
         }
         
     }
@@ -108,6 +127,7 @@ public class PathFinder : MonoBehaviour
 
     private void addStartAndEnd()
     {
+        // Todo consider moving out
             startWaypoint.SetTopColor(Color.grey);
             endWaypoint.SetTopColor(Color.black);
     }
