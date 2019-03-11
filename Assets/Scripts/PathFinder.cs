@@ -57,7 +57,7 @@ public class PathFinder : MonoBehaviour
         while (queue.Count > 0 && isRunning) // As long as the queue is not empty and the searchpoint has not been found, this loop will run.
         {
             searchCenter = queue.Dequeue(); // pop the first item from the queue
-            print("Searching from " + searchCenter);
+            //print("Searching from " + searchCenter);
             HaltIfEndFound(); //Check if the item is the endpoint
             // explore neightbours
             ExploreNeightbours(); //If the item is not the endpoint, look and add neighbours to queue
@@ -92,7 +92,7 @@ public class PathFinder : MonoBehaviour
             //neighbour.SetTopColor(Color.blue);
             neighbour.exploredFrom = searchCenter;
             queue.Enqueue(neighbour);
-            print("queuing " + neighbour);
+            //print("queuing " + neighbour);
         }
         
     }
@@ -101,7 +101,7 @@ public class PathFinder : MonoBehaviour
     {
         if (searchCenter == endWaypoint)
         {
-            print("Endpoint found");
+            //print("Endpoint found");
             isRunning = false;
             return;
         }
@@ -122,7 +122,7 @@ public class PathFinder : MonoBehaviour
                 grid.Add(point.GetGridPos, point);
             }
         }
-        print("Loaded "+grid.Count+" blocks.");
+        //print("Loaded "+grid.Count+" blocks.");
     }
 
     private void addStartAndEnd()
