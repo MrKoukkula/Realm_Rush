@@ -22,7 +22,7 @@ public class EnemyDamage : MonoBehaviour
     {
         hitpoints -= 1;
         print("current hitpoints " + hitpoints);
-        if (hitpoints <= 1)
+        if (hitpoints <= 0)
         {
             killEnemy();
         }
