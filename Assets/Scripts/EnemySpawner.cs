@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] EnemyMovement enemy;
-    [SerializeField] GameObject enemySpawningPoint;
     [SerializeField] float secondsBetweenSpawns;
     [SerializeField] int amountOfEnemies;
     // Start is called before the first frame update
@@ -19,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
     {
         while (amountOfEnemies != 0)
         {
-            Instantiate(enemy, enemySpawningPoint.transform);
+            Instantiate(enemy, transform);
             yield return new WaitForSeconds(secondsBetweenSpawns);
             amountOfEnemies--;
         }
