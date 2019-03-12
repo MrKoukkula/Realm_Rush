@@ -29,11 +29,18 @@ public class PathFinder : MonoBehaviour
     public List<Waypoint> getPath {
 
         get {
-            LoadBlocks(); //Load the world
-            addStartAndEnd(); //Mark the start and end points
-            BreadthFirstSearch(); //Start searching
-            CreatePath();
-            return path;
+            if (path.Count == 0)
+            {
+                LoadBlocks(); //Load the world
+                addStartAndEnd(); //Mark the start and end points
+                BreadthFirstSearch(); //Start searching
+                CreatePath();
+                return path;
+            } else
+            {
+                return path;
+            }
+            
         }
     }
 
