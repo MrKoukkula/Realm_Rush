@@ -6,6 +6,6 @@ public class MouseOver : MonoBehaviour
 {
     private void OnMouseOver()
     {
-        print("Eek! A Mouse is on "+ transform.position);
+        print("Eek! A Mouse is on "+ gameObject.name);
     }
 }

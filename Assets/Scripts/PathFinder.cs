@@ -32,7 +32,6 @@ public class PathFinder : MonoBehaviour
             if (path.Count == 0)
             {
                 LoadBlocks(); //Load the world
-                addStartAndEnd(); //Mark the start and end points
                 BreadthFirstSearch(); //Start searching
                 CreatePath();
                 return path;
@@ -132,12 +131,6 @@ public class PathFinder : MonoBehaviour
         //print("Loaded "+grid.Count+" blocks.");
     }
 
-    private void addStartAndEnd()
-    {
-        // Todo consider moving out
-            startWaypoint.SetTopColor(Color.grey);
-            endWaypoint.SetTopColor(Color.black);
-    }
 
     // Update is called once per frame
     void Update()
