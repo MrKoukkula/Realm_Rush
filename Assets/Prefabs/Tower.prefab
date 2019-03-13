@@ -4707,7 +4707,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6660029074055875413}
-  - component: {fileID: 6660029074055875410}
+  - component: {fileID: 7311502827367585025}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -4731,7 +4731,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6660029074055875410
+--- !u!114 &7311502827367585025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4744,7 +4744,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToPan: {fileID: 6657375132851707415}
-  targetEnemy: {fileID: 0}
   bullets: {fileID: 6660029073945654844}
   attackRange: 40
 --- !u!1001 &6660029074744173306

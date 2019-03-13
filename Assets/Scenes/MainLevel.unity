@@ -2006,6 +2006,12 @@ PrefabInstance:
       propertyPath: m_Text
       value: 0,0
       objectReference: {fileID: 0}
+    - target: {fileID: 757529716177624225, guid: d0001b881d3d92843884972773ad4f51,
+        type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 6660029074055875412, guid: 2a69a7cc377cfd94bbb120b96404fc20,
+        type: 3}
     - target: {fileID: 9180435300561828392, guid: d0001b881d3d92843884972773ad4f51,
         type: 3}
       propertyPath: m_Enabled
