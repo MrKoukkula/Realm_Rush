@@ -32,7 +32,6 @@ public class Waypoint : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && isPlaceable)
         {
-            print("Eek! A Mouse is on " + gameObject.name);
             Instantiate(tower, transform.position, Quaternion.identity);
             isPlaceable = false;
         }
