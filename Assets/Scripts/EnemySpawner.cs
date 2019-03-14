@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] EnemyMovement enemy;
+    [SerializeField] Transform enemyParent;
     [SerializeField] float secondsBetweenSpawns;
     [SerializeField] int amountOfEnemies;
     // Start is called before the first frame update
