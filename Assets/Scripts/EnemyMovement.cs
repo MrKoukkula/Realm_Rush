@@ -7,7 +7,7 @@ public class EnemyMovement : MonoBehaviour
     List<Waypoint> path;
     // Start is called before the first frame update
     PathFinder pathFinder;
-
+    [SerializeField] float enemyMovement = 0.5f;
 
     void Start()
     {
@@ -23,7 +23,7 @@ public class EnemyMovement : MonoBehaviour
         {
             transform.position = waypoint.transform.position;
             //print("Patrolling at " + waypoint.name);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(enemyMovement);
         }
         //print("Ending patrol");
     }
