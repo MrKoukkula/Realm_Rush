@@ -468,6 +468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMovement: 1
+  explosionParticles: {fileID: 0}
 --- !u!54 &302945233
 Rigidbody:
   m_ObjectHideFlags: 0

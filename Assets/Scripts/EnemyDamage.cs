@@ -27,7 +27,7 @@ public class EnemyDamage : MonoBehaviour
         //print("current hitpoints " + hitpoints);
         if (hitpoints <= 0)
         {
-            Instantiate(deathParticlePrefab, transform);
+            Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
             killEnemy();
         }
     }

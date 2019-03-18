@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     PathFinder pathFinder;
     [SerializeField] float enemyMovement = 0.5f;
+    [SerializeField] ParticleSystem explosionParticles;
 
     void Start()
     {
@@ -25,7 +26,14 @@ public class EnemyMovement : MonoBehaviour
             //print("Patrolling at " + waypoint.name);
             yield return new WaitForSeconds(enemyMovement);
         }
-        //print("Ending patrol");
+        print("Ending patrol");
+        Instantiate(explosionParticles, transform);
+        killEnemy();
+    }
+
+    private void killEnemy()
+    {
+        Destroy(gameObject);
     }
 
 }
