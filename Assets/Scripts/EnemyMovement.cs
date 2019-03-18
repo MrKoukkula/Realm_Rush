@@ -27,8 +27,8 @@ public class EnemyMovement : MonoBehaviour
             yield return new WaitForSeconds(enemyMovement);
         }
         print("Ending patrol");
-        Instantiate(explosionParticles, transform);
-        killEnemy();
+        Instantiate(explosionParticles, transform.position, Quaternion.identity);
+        Invoke("killEnemy", 0.1f);
     }
 
     private void killEnemy()
