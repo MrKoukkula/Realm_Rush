@@ -1023,6 +1023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: 5
+  healthText: {fileID: 1031968990}
 --- !u!1 &731296109
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,7 +1036,7 @@ GameObject:
   - component: {fileID: 731296112}
   - component: {fileID: 731296111}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1306,7 +1307,7 @@ GameObject:
   - component: {fileID: 1031968991}
   - component: {fileID: 1031968990}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: fbhealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1529,6 +1530,7 @@ MonoBehaviour:
   enemyParent: {fileID: 0}
   secondsBetweenSpawns: 2
   amountOfEnemies: 5
+  enemyAmount: {fileID: 731296111}
 --- !u!1 &1158133889
 GameObject:
   m_ObjectHideFlags: 0
