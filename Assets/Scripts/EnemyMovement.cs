@@ -19,6 +19,7 @@ public class EnemyMovement : MonoBehaviour
 
     IEnumerator FollowPath(List<Waypoint> pathRoute)
     {
+        var exploRotation = new Quaternion(transform.rotation.x -1, transform.rotation.y, transform.rotation.z, transform.rotation.w);
         //print("Starting patrol");
         foreach (Waypoint waypoint in pathRoute)
         {
@@ -27,7 +28,7 @@ public class EnemyMovement : MonoBehaviour
             yield return new WaitForSeconds(enemyMovement);
         }
         print("Ending patrol");
-        Instantiate(explosionParticles, transform.position, Quaternion.identity);
+        Instantiate(explosionParticles, transform.position, exploRotation);
         Invoke("killEnemy", 0.1f);
     }
 

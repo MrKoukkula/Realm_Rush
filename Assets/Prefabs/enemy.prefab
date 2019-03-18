@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 114941686308246830}
   - component: {fileID: 114078703179129330}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18976,10 +18976,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4907987154143992}
     m_Modifications:
-    - target: {fileID: 1505610324796538, guid: dcf9cd10c07cf0c49863969befadb243, type: 3}
-      propertyPath: m_Name
-      value: Enemy Hit Particles
-      objectReference: {fileID: 0}
     - target: {fileID: 198801791596541968, guid: dcf9cd10c07cf0c49863969befadb243,
         type: 3}
       propertyPath: playOnAwake
@@ -19028,6 +19024,10 @@ PrefabInstance:
     - target: {fileID: 4208721479801298, guid: dcf9cd10c07cf0c49863969befadb243, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1505610324796538, guid: dcf9cd10c07cf0c49863969befadb243, type: 3}
+      propertyPath: m_Name
+      value: Enemy Hit Particles
       objectReference: {fileID: 0}
     - target: {fileID: 198098995208406150, guid: dcf9cd10c07cf0c49863969befadb243,
         type: 3}
