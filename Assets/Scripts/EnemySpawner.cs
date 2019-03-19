@@ -11,11 +11,14 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] float secondsBetweenSpawns;
     [SerializeField] int amountOfEnemies;
     [SerializeField] Text enemyAmount;
+    int score;
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(spawnEnemy());
+        enemyAmount.text = "Enemies: " + score;
+
     }
     
 
@@ -23,9 +26,13 @@ public class EnemySpawner : MonoBehaviour
     {
         while (amountOfEnemies != 0)
         {
+
             Instantiate(enemy, transform);
+            score++;
+            enemyAmount.text = "Enemies: " + score;
             yield return new WaitForSeconds(secondsBetweenSpawns);
             amountOfEnemies--;
+            
         }
         
     }
