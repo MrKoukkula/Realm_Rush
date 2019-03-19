@@ -16,14 +16,8 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(spawnEnemy());
-        //updateEnemyAmount();
     }
-
-    //private void updateEnemyAmount()
-    //{
-    //    var enemies = FindObjectsOfType<EnemyMovement>();
-    //    enemyAmount.text = "Enemy amount: " + enemies.Length;
-    //}
+    
 
     IEnumerator spawnEnemy()
     {
